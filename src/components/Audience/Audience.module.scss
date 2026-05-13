@@ -1,0 +1,134 @@
+.section {
+  padding: 8rem 0;
+  background: var(--cream-light);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--white);
+  padding: 3.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+
+  &:first-child {
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  }
+  &:last-child {
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  }
+
+  &:hover {
+    background: var(--navy);
+
+    .title,
+    .benefitText {
+      color: var(--cream);
+    }
+
+    .benefitIcon {
+      background: rgba(201, 169, 110, 0.2);
+      border-color: rgba(201, 169, 110, 0.3);
+
+      svg {
+        color: var(--gold);
+      }
+    }
+
+    .cardLabel {
+      color: var(--gold);
+    }
+    .divider {
+      background: rgba(229, 222, 212, 0.15);
+    }
+  }
+}
+
+.cardLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+
+.divider {
+  height: 1px;
+  background: var(--cream-dark);
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+
+.benefits {
+  margin-bottom: 2.5rem;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+}
+
+.benefitIcon {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--cream-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+
+  svg {
+    width: 0.9rem;
+    height: 0.9rem;
+    color: var(--taupe);
+    transition: var(--transition);
+  }
+}
+
+.benefitText {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--navy);
+  transition: var(--transition);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 2.5rem 2rem;
+
+    &:first-child {
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+  }
+}
